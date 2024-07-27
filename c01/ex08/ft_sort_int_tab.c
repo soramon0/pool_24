@@ -1,5 +1,3 @@
-
-#include <stdio.h>
 void ft_swap(int *a, int *b)
 {
   int tmp;
@@ -22,7 +20,6 @@ void  ft_sort_int_tab(int *tab, int size)
   {
     j = 0;
     swapped = 0;
-    printf("PASS = %d\n", i);
     while (j < size - i - 1)
     {
       if (tab[j] > tab[j + 1]) {
@@ -37,6 +34,7 @@ void  ft_sort_int_tab(int *tab, int size)
   }
 }
 
+/*
 int main()
 {
   int a[10] = {1,5,-10,2,3,10,14,0,99,47};
@@ -49,3 +47,4 @@ int main()
   }
   return 0;
 }
+*/
