@@ -12,21 +12,28 @@ void ft_swap(int *a, int *b)
 void  ft_sort_int_tab(int *tab, int size)
 {
   int i;
+  int j;
+  int swapped;
 
   if (size <= 1)
     return ;
   i = 0;
-  while(size >= 0)
+  while(i < size - 1)
   {
-    while (i < size - 1)
+    j = 0;
+    swapped = 0;
+    printf("PASS = %d\n", i);
+    while (j < size - i - 1)
     {
-      if (tab[i] > tab[i + 1])
-      {
-        ft_swap(&tab[i], &tab[i + 1]);
+      if (tab[j] > tab[j + 1]) {
+        ft_swap(&tab[j], &tab[j + 1]);
+        swapped = 1;
       }
-      i++;
+      j++;
     }
-    size--;
+    if (swapped == 0)
+      break;
+    i++;
   }
 }
 
@@ -37,7 +44,7 @@ int main()
   int i = 0;
   while(i < 10)
   {
-    printf("%d\n", a[i]);
+    printf("%d ", a[i]);
     i++;
   }
   return 0;

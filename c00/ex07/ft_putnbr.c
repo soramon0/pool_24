@@ -34,7 +34,7 @@ void	ft_putnbr(int nb)
 		ft_putchar(num + '0');
 		return ;
 	}
-	while (num % 10)
+	while (num)
 	{
 		c[i++] = num % 10 + '0';
 		num /= 10;
@@ -42,3 +42,9 @@ void	ft_putnbr(int nb)
 	while(i >= 0)
 		ft_putchar(c[--i]);
 }
+
+	int main()
+	{
+		ft_putnbr(10);
+		return 0;
+	}
