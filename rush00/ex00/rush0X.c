@@ -16,14 +16,28 @@ void print_col(int i, int x)
     ft_putchar(' ');
 }
 
+void ft_putstr(char *str)
+{
+  int i;
+
+  i = 0;
+  while (str[i] != '\0')
+  {
+    ft_putchar(str[i]);
+    i++;
+  }
+}
+
 void  rush(int x, int y)
 {
   int i;
   int j;
 
   if (x <= 0 || y <= 0)
+  {
+    ft_putstr("x or y can not be less than or equal to 0\n");
     return ;
-
+  }
   j = 0;
   while(j < y)
   {
