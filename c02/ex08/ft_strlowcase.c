@@ -1,36 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_str_is_uppercase.c                              :+:      :+:    :+:   */
+/*   ft_strlowcase.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: klaayoun <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/28 22:42:18 by klaayoun          #+#    #+#             */
-/*   Updated: 2024/07/28 22:42:19 by klaayoun         ###   ########.fr       */
+/*   Created: 2024/07/28 22:46:45 by klaayoun          #+#    #+#             */
+/*   Updated: 2024/07/28 22:46:47 by klaayoun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_is_alpha(char c)
+char	*ft_strlowcase(char *str)
 {
-	if (c >= 'A' && c <= 'Z')
-		return (1);
-	return (0);
-}
+	int	i;
 
-int	ft_str_is_uppercase(char *str)
-{
-	while (*str != '\0')
+	i = 0;
+	while (str[i] != '\0')
 	{
-		if (ft_is_alpha(*str) == 0)
-			return (0);
-		str++;
+		if (str[i] >= 'A' && str[i] <= 'Z')
+			str[i] = str[i] + 32;
+		i++;
 	}
-	return (1);
+	return (str);
 }
 /*
+#include <stdio.h>
 int main()
 {
-  printf("%d\n", ft_str_is_uppercase("HELfLO"));
+  char str[] = "Hello WOrld";
+  printf("%s\n", ft_strlowcase(str));
   return 0;
 }
 */
