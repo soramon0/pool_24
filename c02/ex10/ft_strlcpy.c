@@ -15,15 +15,15 @@ unsigned int	ft_strlcpy(char *dest, char *src, unsigned int size)
 	unsigned int	i;
 
 	i = 0;
-	if (!src || !dest)
-		return i;
 	while (src[i])
 	{
 		if (i < size)
 			dest[i] = src[i];
 		i++;
 	}
-	if (size > i)
+	if (size <= 0)
+		return (i);
+	else if (size > i)
 		dest[i] = '\0';
 	else
 		dest[size - 1] = '\0';
