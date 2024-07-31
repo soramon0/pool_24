@@ -39,12 +39,12 @@ void	ft_putnbr(int nb)
 		c[i++] = num % 10 + '0';
 		num /= 10;
 	}
-	while(i >= 0)
+	while(i > 0)
 		ft_putchar(c[--i]);
 }
 
 	int main()
 	{
-		ft_putnbr(10);
+		ft_putnbr(100);
 		return 0;
 	}

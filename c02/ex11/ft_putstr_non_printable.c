@@ -14,7 +14,7 @@
 
 int	ft_is_non_printable(unsigned char c)
 {
-	if ((c >= 0 && c <= 31) || c == 127)
+	if (c <= 31 || c >= 127)
 		return (1);
 	return (0);
 }
@@ -39,7 +39,7 @@ void	int_to_hex(int n)
 		c[i++] = hex[n % 16];
 		n /= 16;
 	}
-	while (i >= 0)
+	while (i > 0)
 		ft_putchar(c[--i]);
 }
 
@@ -62,10 +62,8 @@ void	ft_putstr_non_printable(char *str)
 		i++;
 	}
 }
-/*
 int main()
 {
-  ft_putstr_non_printable("Coucou\ntu vas bien ?");
+  ft_putstr_non_printable("Coucou\ntu vas bien\b?");
   return (0);
 }
-*/
