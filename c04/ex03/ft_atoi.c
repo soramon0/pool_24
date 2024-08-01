@@ -32,17 +32,17 @@ int	ft_atoi(char *str)
 	int	s;
 
 	i = 0;
-	while (ft_isspace(str[i]))
+	while (str && ft_isspace(str[i]))
 		i++;
 	s = 0;
-	while (str[i] == '-' || str[i] == '+')
+	while (str && (str[i] == '-' || str[i] == '+'))
 	{
 		if (str[i] == '-')
 			s++;
 		i++;
 	}
 	r = 0;
-	while (str[i] && ft_isnum(str[i]))
+	while (str && str[i] && ft_isnum(str[i]))
 	{
 		r *= 10;
 		r += str[i] - '0';
@@ -60,7 +60,7 @@ int	ft_atoi(char *str)
 // 	int r1 = atoi(s1);
 // 	printf("atoi(%s) = %d\n", s1, r1);
 //
-// 	char *s2 = "  --+312k3";
+// 	char *s2 = NULL;
 // 	int r2 = ft_atoi(s2);
 // 	printf("ft_atoi(%s) = %d\n", s2, r2);
 // 	return (0);
