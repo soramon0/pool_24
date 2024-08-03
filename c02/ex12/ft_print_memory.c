@@ -20,50 +20,42 @@ int	ft_is_non_printable(unsigned char c)
 	return (0);
 }
 
-void	ft_putchar(unsigned char c)
+void	ft_puthex(long nb)
 {
-	write(1, &c, 1);
-}
-
-void	int_to_hex(int n)
-{
-	char	c[8];
+	char	c[64];
 	char	*hex;
 	int		i;
 
-	if (n < 16)
-		ft_putchar('0');
-	hex = "0123456789abcdef";
 	i = 0;
-	while (n)
+	hex = "0123456789abcdef";
+	while (nb)
 	{
-		c[i++] = hex[n % 16];
-		n /= 16;
+		c[i++] = hex[(nb % 16)];
+		nb /= 16;
 	}
-	while (i >= 0)
-		ft_putchar(c[--i]);
+	write(1, "x0", 2);
+	while (i > 0)
+		write(1, &c[--i], 1);
 }
 
 void	*ft_print_memory(void *addr, unsigned int size)
 {
-	unsigned int	i;
-	unsigned long p = 0;
+	char	*str;
 
-	if (size <= 0)
-		return (addr);
-	p = (unsigned long)p;
-	i = (sizeof(p) << 3) - 4;
-	while (i >= 0)
+	str = (char *)addr;
+	while (*str)
 	{
-		int_to_hex((p >> i) & 0xf);
-		i -= 4;
+		ft_puthex((long)str);
+		write(1, ": ", 2);
+		write(1, "\n", 1);
+		str = str + 16;
 	}
 	return (addr);
 }
 
 int	main(void)
 {
-	int input = 1;
-	ft_print_memory(&input, sizeof(input));
+	char *input = "Bonjour les amin";
+	ft_print_memory(&input, 16);
 	return (0);
 }

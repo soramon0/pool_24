@@ -15,14 +15,9 @@ int	ft_isnum(char c)
 	return (c >= '0' && c <= '9');
 }
 
-int	ft_isspace(unsigned char c)
+int	ft_isspace(char c)
 {
 	return (c == '\t' || c == '\n' || c == '\v' || c == '\r' || c == ' ');
-}
-
-int	ft_iseven(int n)
-{
-	return (n % 2 == 0);
 }
 
 int	ft_atoi(char *str)
@@ -32,36 +27,32 @@ int	ft_atoi(char *str)
 	int	s;
 
 	i = 0;
-	while (str && ft_isspace(str[i]))
+	while (ft_isspace(str[i]))
 		i++;
-	s = 0;
-	while (str && (str[i] == '-' || str[i] == '+'))
+	s = 1;
+	while (str[i] == '-' || str[i] == '+')
 	{
 		if (str[i] == '-')
-			s++;
+			s *= -1;
 		i++;
 	}
 	r = 0;
-	while (str && str[i] && ft_isnum(str[i]))
+	while (ft_isnum(str[i]))
 	{
-		r *= 10;
-		r += str[i] - '0';
+		r = (r * 10) + str[i] - '0';
 		i++;
 	}
-	if (!ft_iseven(s))
-		return (r * -1);
-	return (r);
+	return (r * s);
 }
 // #include <stdio.h>
 // #include <stdlib.h>
 // int	main(void)
 // {
-// 	char *s1 = "  312k3";
+// 	char *s1 = " ----++312k3";
 // 	int r1 = atoi(s1);
-// 	printf("atoi(%s) = %d\n", s1, r1);
+// 	printf("atoi(%s) = \"%d\"\n", s1, r1);
 //
-// 	char *s2 = NULL;
-// 	int r2 = ft_atoi(s2);
-// 	printf("ft_atoi(%s) = %d\n", s2, r2);
+// 	int r2 = ft_atoi(s1);
+// 	printf("ft_atoi(%s) = \"%d\"\n", s1, r2);
 // 	return (0);
 // }

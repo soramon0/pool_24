@@ -55,7 +55,7 @@ void	ft_putnbr_base(int nbr, char *base)
 {
 	int				base_len;
 	long			num;
-	unsigned char	c[50];
+	unsigned char	c[32];
 	unsigned int	i;
 
 	base_len = ft_strlen(base);
@@ -76,8 +76,8 @@ void	ft_putnbr_base(int nbr, char *base)
 	while (i > 0)
 		ft_putchar(c[--i]);
 }
-// int	main(void)
-// {
-// 	ft_putnbr_base(69, "01234567");
-// 	return (0);
-// }
+int	main(void)
+{
+	ft_putnbr_base(-2147483648, "");
+	return (0);
+}
