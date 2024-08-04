@@ -17,7 +17,7 @@ int	ft_isnum(char c)
 
 int	ft_isspace(char c)
 {
-	return (c == '\t' || c == '\n' || c == '\v' || c == '\r' || c == ' ');
+	return (c == '\t' || c == '\f' || c == '\n' || c == '\v' || c == '\r' || c == ' ');
 }
 
 int	ft_atoi(char *str)
@@ -27,16 +27,16 @@ int	ft_atoi(char *str)
 	int	s;
 
 	i = 0;
+	r = 0;
+	s = 1;
 	while (ft_isspace(str[i]))
 		i++;
-	s = 1;
 	while (str[i] == '-' || str[i] == '+')
 	{
 		if (str[i] == '-')
 			s *= -1;
 		i++;
 	}
-	r = 0;
 	while (ft_isnum(str[i]))
 	{
 		r = (r * 10) + str[i] - '0';
