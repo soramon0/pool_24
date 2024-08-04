@@ -22,8 +22,6 @@ int	ft_strlen(char *str)
 	int	i;
 
 	i = 0;
-	if (!str)
-		return (i);
 	while (str[i])
 		i++;
 	return (i);
@@ -59,15 +57,17 @@ void	ft_putnbr_base(int nbr, char *base)
 	unsigned int	i;
 
 	base_len = ft_strlen(base);
+	num = nbr;
+	i = 0;
 	if (!ft_valid(base, base_len))
 		return ;
-	num = nbr;
+	if (num == 0)
+		ft_putchar('0');
 	if (num < 0)
 	{
 		ft_putchar('-');
 		num *= -1;
 	}
-	i = 0;
 	while (num)
 	{
 		c[i++] = base[num % base_len];
@@ -78,6 +78,6 @@ void	ft_putnbr_base(int nbr, char *base)
 }
 int	main(void)
 {
-	ft_putnbr_base(-2147483648, "");
+	ft_putnbr_base(-1, "0123456789abcdef");
 	return (0);
 }
