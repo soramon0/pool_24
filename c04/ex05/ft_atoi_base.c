@@ -46,7 +46,7 @@ int	ft_valid(char *str, int size)
 
 int	ft_isspace(unsigned char c)
 {
-	return (c == '\t' || c == '\n' || c == '\v' || c == '\r' || c == ' ');
+	return (c == '\t' || c == '\f' || c == '\n' || c == '\v' || c == '\r' || c == ' ');
 }
 
 int	ft_atoi(char *str, char *base, int base_len)
