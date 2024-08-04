@@ -11,11 +11,12 @@
 /* ************************************************************************** */
 
 #include <stdio.h>
+#include <string.h>
 #include <unistd.h>
 
 int	ft_is_non_printable(unsigned char c)
 {
-	if ((c >= 0 && c <= 31) || c == 127)
+	if (c > 31 && c < 127)
 		return (1);
 	return (0);
 }
@@ -43,19 +44,22 @@ void	*ft_print_memory(void *addr, unsigned int size)
 	char	*str;
 
 	str = (char *)addr;
-	while (*str)
+	while (*str != '\0')
 	{
+		printf("\n");
 		ft_puthex((long)str);
+		// write(1, str, 16);
 		write(1, ": ", 2);
-		write(1, "\n", 1);
+		write(1, str, 1);
 		str = str + 16;
+		write(1, "\n", 1);
 	}
 	return (addr);
 }
 
 int	main(void)
 {
-	char *input = "Bonjour les amin";
-	ft_print_memory(&input, 16);
+	char *input = "Bonjour les amin Bonjour les amin";
+	ft_print_memory(input, strlen(input));
 	return (0);
 }
