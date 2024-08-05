@@ -35,7 +35,7 @@ int	ft_valid(char *str, int size)
 			j++;
 		if (j != size - 1)
 			return (0);
-		if (str[i] == '-' || str[i] == '+')
+		if (str[i] == '-' || str[i] == '+' || str[i] == ' ')
 			return (0);
 		i++;
 	}
@@ -91,8 +91,8 @@ int	ft_atoi_base(char *str, char *base)
 // #include <stdlib.h>
 // int	main(void)
 // {
-// 	char *str = "   +---+101";
-// 	int r1 = ft_atoi_base(str, "0123456789");
+// 	char *str = "   -a";
+// 	int r1 = ft_atoi_base(str, "0123456789abcdef");
 // 	int r2 = atoi(str);
 // 	printf("ft_atoi = %d\n", r1);
 // 	printf("atoi = %d\n", r2);
