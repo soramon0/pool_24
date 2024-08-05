@@ -76,8 +76,8 @@ void	ft_putnbr_base(int nbr, char *base)
 	while (i > 0)
 		ft_putchar(c[--i]);
 }
-int	main(void)
-{
-	ft_putnbr_base(-1, "0123456789abcdef");
-	return (0);
-}
+// int	main(void)
+// {
+// 	ft_putnbr_base(-1, "0123456789abcdef");
+// 	return (0);
+// }

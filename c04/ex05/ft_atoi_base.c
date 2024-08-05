@@ -91,7 +91,7 @@ int	ft_atoi_base(char *str, char *base)
 // #include <stdlib.h>
 // int	main(void)
 // {
-// 	char *str = "   -a";
+// 	char *str = "-80000000";
 // 	int r1 = ft_atoi_base(str, "0123456789abcdef");
 // 	int r2 = atoi(str);
 // 	printf("ft_atoi = %d\n", r1);
