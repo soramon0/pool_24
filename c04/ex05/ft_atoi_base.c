@@ -15,8 +15,6 @@ int	ft_strlen(char *str)
 	int	i;
 
 	i = 0;
-	if (!str)
-		return (i);
 	while (str[i])
 		i++;
 	return (i);
@@ -57,8 +55,8 @@ int	ft_atoi(char *str, char *base, int base_len)
 	int	s;
 
 	i = 0;
-	s = 1;
 	r = 0;
+	s = 1;
 	if (str[i] == '-' || str[i] == '+')
 	{
 		if (str[i] == '-')
@@ -85,7 +83,7 @@ int	ft_atoi_base(char *str, char *base)
 	base_len = ft_strlen(base);
 	if (!ft_valid(base, base_len))
 		return (0);
-	while (str && ft_isspace(*str))
+	while (ft_isspace(*str))
 		str++;
 	return (ft_atoi(str, base, base_len));
 }
@@ -93,8 +91,8 @@ int	ft_atoi_base(char *str, char *base)
 // #include <stdio.h>
 // int	main(void)
 // {
-// 	int r1 = ft_atoi_base("70000000", "0123456789abcdef");
-// 	int r2 = atoi("69k");
+// 	int r1 = ft_atoi_base("11", "0123456789abcdeff");
+// 	int r2 = atoi("11");
 // 	printf("%d\n", r1);
 // 	printf("%d\n", r2);
 // 	return (0);
