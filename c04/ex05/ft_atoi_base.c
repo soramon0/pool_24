@@ -57,7 +57,7 @@ int	ft_atoi(char *str, char *base, int base_len)
 	i = 0;
 	r = 0;
 	s = 1;
-	if (str[i] == '-' || str[i] == '+')
+	while (str[i] == '-' || str[i] == '+')
 	{
 		if (str[i] == '-')
 			s *= -1;
@@ -66,7 +66,7 @@ int	ft_atoi(char *str, char *base, int base_len)
 	while (str[i])
 	{
 		j = 0;
-		while (str[i] && base[j] && str[i] != base[j])
+		while (base[j] && str[i] != base[j])
 			j++;
 		if (j == base_len)
 			break ;
@@ -87,13 +87,14 @@ int	ft_atoi_base(char *str, char *base)
 		str++;
 	return (ft_atoi(str, base, base_len));
 }
-// #include <stdlib.h>
 // #include <stdio.h>
+// #include <stdlib.h>
 // int	main(void)
 // {
-// 	int r1 = ft_atoi_base("11", "0123456789abcdeff");
-// 	int r2 = atoi("11");
-// 	printf("%d\n", r1);
-// 	printf("%d\n", r2);
+// 	char *str = "   +---+101";
+// 	int r1 = ft_atoi_base(str, "0123456789");
+// 	int r2 = atoi(str);
+// 	printf("ft_atoi = %d\n", r1);
+// 	printf("atoi = %d\n", r2);
 // 	return (0);
 // }
