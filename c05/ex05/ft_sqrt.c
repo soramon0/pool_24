@@ -1,34 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_iterative_factorial.c                           :+:      :+:    :+:   */
+/*   ft_sqrt.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: klaayoun <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/05 17:59:03 by klaayoun          #+#    #+#             */
-/*   Updated: 2024/08/05 17:59:25 by klaayoun         ###   ########.fr       */
+/*   Created: 2024/08/06 18:23:40 by klaayoun          #+#    #+#             */
+/*   Updated: 2024/08/06 18:23:42 by klaayoun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_iterative_factorial(int nb)
+int ft_sqrt(int nb)
 {
-	int	r;
-
-	if (nb < 0)
-		return (0);
-	if (nb == 0)
-		return (1);
-	r = nb;
-	while (nb > 1)
-	{
-		r = r * (nb - 1);
-		nb--;
-	}
-	return (r);
+  return (nb);
 }
 // #include <stdio.h>
 // int	main(void)
 // {
-// 	printf("%d\n", ft_iterative_factorial(5));
+// 	printf("%d\n", ft_sqrt(3));
 // 	return (0);
 // }
