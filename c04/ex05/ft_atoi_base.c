@@ -20,6 +20,11 @@ int	ft_strlen(char *str)
 	return (i);
 }
 
+int	ft_isspace(unsigned char c)
+{
+	return (c == '\t' || c == '\f' || c == '\n' || c == '\v' || c == '\r' || c == ' ');
+}
+
 int	ft_valid(char *str, int size)
 {
 	int	i;
@@ -35,16 +40,11 @@ int	ft_valid(char *str, int size)
 			j++;
 		if (j != size - 1)
 			return (0);
-		if (str[i] == '-' || str[i] == '+' || str[i] == ' ')
+		if (str[i] == '-' || str[i] == '+' || ft_isspace(str[i]))
 			return (0);
 		i++;
 	}
 	return (1);
-}
-
-int	ft_isspace(unsigned char c)
-{
-	return (c == '\t' || c == '\f' || c == '\n' || c == '\v' || c == '\r' || c == ' ');
 }
 
 int	ft_atoi(char *str, char *base, int base_len)
