@@ -6,17 +6,29 @@
 /*   By: klaayoun <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/06 18:23:40 by klaayoun          #+#    #+#             */
-/*   Updated: 2024/08/06 18:23:42 by klaayoun         ###   ########.fr       */
+/*   Updated: 2024/08/10 18:55:55 by klaayoun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_sqrt(int nb)
+int	ft_sqrt(int nb)
 {
-  return (nb);
+	int	x;
+
+	if (nb == 1)
+		return (1);
+	x = 2;
+	while (x < (nb / 2))
+	{
+		if (x * x == nb)
+			return (x);
+		x++;
+	}
+	return (0);
 }
 // #include <stdio.h>
-// int	main(void)
+//
+// int main(void)
 // {
-// 	printf("%d\n", ft_sqrt(3));
-// 	return (0);
+//   printf("%d\n", ft_sqrt(9));
+//   return (0);
 // }
