@@ -6,18 +6,20 @@
 /*   By: klaayoun <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/06 18:23:40 by klaayoun          #+#    #+#             */
-/*   Updated: 2024/08/10 18:55:55 by klaayoun         ###   ########.fr       */
+/*   Updated: 2024/08/12 13:37:09 by klaayoun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_sqrt(int nb)
 {
 	int	x;
+	int	target;
 
 	if (nb == 1)
 		return (1);
+	target = nb / 2;
 	x = 2;
-	while (x < (nb / 2))
+	while (x <= target)
 	{
 		if (x * x == nb)
 			return (x);
