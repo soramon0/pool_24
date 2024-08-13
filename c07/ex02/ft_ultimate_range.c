@@ -12,7 +12,7 @@
 
 #include <stdlib.h>
 
-int	ft_utlimate_range(int **range, int min, int max)
+int	ft_ultimate_range(int **range, int min, int max)
 {
 	int	i;
 	int	size;
@@ -22,7 +22,7 @@ int	ft_utlimate_range(int **range, int min, int max)
 		return (0);
 	size = max - min;
 	*range = (int *)malloc(sizeof(int) * size);
-	if (!range)
+	if (!(*range))
 		return (-1);
 	i = 0;
 	while (i < size)

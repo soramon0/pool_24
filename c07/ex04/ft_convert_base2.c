@@ -26,7 +26,7 @@ int	ft_isspace(unsigned char c)
 			|| c == '\v' || c == '\r' || c == ' ');
 }
 
-int	ft_valid(char *str, int size)
+int	ft_valid(char *base, int size)
 {
 	int	i;
 	int	j;
@@ -34,17 +34,18 @@ int	ft_valid(char *str, int size)
 	i = 0;
 	if (size <= 1)
 		return (i);
-	while (str[i])
+	while (base[i])
 	{
 		j = i;
-		while (str[i] && str[j + 1] && str[i] != str[j + 1])
+		while (base[i] && base[j + 1] && base[i] != base[j + 1])
 			j++;
 		if (j != size - 1)
 			return (0);
-		if (str[i] == '-' || str[i] == '+' || ft_isspace(str[i]))
+		if (base[i] == '-' || base[i] == '+' || ft_isspace(base[i]))
 			return (0);
 		i++;
 	}
+
 	return (1);
 }
 

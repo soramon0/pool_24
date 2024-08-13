@@ -19,6 +19,7 @@ int	ft_count_strs(int size, char **strs)
 	int	j;
 
 	i = 0;
+	count = 0;
 	while (i < size && strs[i])
 	{
 		j = 0;
@@ -42,6 +43,17 @@ char	*alloc_str(int size, char **strs, char *sep)
 	return ((char *)malloc(sizeof(char) * (count + 1)));
 }
 
+char	*my_heart_is_empty(void)
+{
+	char	*heart;
+
+	heart = (char *)(malloc(sizeof(char)));
+	if (!heart)
+		return (NULL);
+	heart[0] = '\0';
+	return (heart);
+}
+
 char	*ft_strjoin(int size, char **strs, char *sep)
 {
 	int		i;
@@ -50,7 +62,7 @@ char	*ft_strjoin(int size, char **strs, char *sep)
 	char	*join;
 
 	if (size == 0)
-		return ((char *)(malloc(0)));
+		return (my_heart_is_empty());
 	join = alloc_str(size, strs, sep);
 	if (!join)
 		return (NULL);
@@ -73,7 +85,7 @@ char	*ft_strjoin(int size, char **strs, char *sep)
 // int main(void)
 // {
 //   char *strs[] = {"Hello", "World", "69"};
-//   char *result = ft_strjoin(3, strs, ", ");
+//   char *result = ft_strjoin(3, strs, "jomla espace jomla");
 //   printf("%s\n", result);
 //   free(result);
 //   return (0);
