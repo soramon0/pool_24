@@ -20,14 +20,14 @@ int		ft_isspace(unsigned char c);
 
 int		ft_valid(char *str, int size);
 
-char	*ft_heart_empty(void)
+char	*ft_heart_empty(char *base)
 {
 	char	*c;
 
 	c = (char *)malloc(sizeof(char) * 2);
 	if (!c)
 		return (NULL);
-	c[0] = '0';
+	c[0] = base[0];
 	c[1] = '\0';
 	return (c);
 }
@@ -59,7 +59,7 @@ char	*ft_int_to_base(int nbr, char *base, int base_len)
 	num = nbr;
 	i = 0;
 	if (num == 0)
-		return (ft_heart_empty());
+		return (ft_heart_empty(base));
 	c = (char *)malloc(sizeof(char) * (get_nbr_size(num, base_len) + 1));
 	if (!c)
 		return (NULL);
@@ -123,11 +123,11 @@ char	*ft_convert_base(char *nbr, char *base_from, char *base_to)
 // #include <stdio.h>
 // int	main(void)
 // {
-// 	char *str = "    --++-80000000";
-// 	char *base_from = "0123456789abcdef";
+// 	char *str = "    --++-0";
+// 	char *base_from = "012346789abcdef";
 // 	int from_len = 16;
-// 	char *base_to = "01";
-// 	int to_len = 2;
+// 	char *base_to = "abcdef";
+// 	int to_len = 6;
 // 	int r1 = ft_atoi(str, 0, base_from, from_len);
 // 	printf("ft_atoi('%s', '%s', %d) = %d\n", \
 // 	str, base_from, from_len, r1);
