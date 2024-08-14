@@ -9,6 +9,8 @@
 /*   Updated: 2024/08/14 16:34:14 by klaayoun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#ifndef FT_BOOL_H
+# define FT_BOOL_H
 
 #include "unistd.h"
 
@@ -20,3 +22,5 @@
 #define FALSE 0
 
 typedef int	t_bool;
+
+#endif
