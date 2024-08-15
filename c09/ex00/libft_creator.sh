@@ -7,4 +7,3 @@ LIB_NAME="libft.a"
 cc -Wall -Wextra -Werror -c $TARGET_LIB_FILES
 ar rc $LIB_NAME $OBJECT_LIB_FILES
 ranlib $LIB_NAME
-rm -f $OBJECT_LIB_FILES
